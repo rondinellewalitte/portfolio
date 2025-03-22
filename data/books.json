@@ -1,0 +1,49 @@
+{
+  "currentlyReading": [
+    {
+      "id": 1,
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "cover": "/placeholder.svg?height=400&width=300",
+      "status": "reading",
+      "progress": 65,
+      "genre": ["Programação", "Desenvolvimento de Software"],
+      "description": "Um guia prático para escrever código limpo e de qualidade, com princípios que todo desenvolvedor deveria seguir."
+    },
+    {
+      "id": 2,
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt & David Thomas",
+      "cover": "/placeholder.svg?height=400&width=300",
+      "status": "reading",
+      "progress": 30,
+      "genre": ["Programação", "Desenvolvimento de Software"],
+      "description": "Um livro clássico que oferece conselhos práticos para melhorar como programador e resolver problemas de forma eficiente."
+    }
+  ],
+  "completedBooks": [
+    {
+      "id": 3,
+      "title": "Eloquent JavaScript",
+      "author": "Marijn Haverbeke",
+      "cover": "/placeholder.svg?height=400&width=300",
+      "status": "completed",
+      "rating": 4.5,
+      "completedDate": "10/01/2023",
+      "genre": ["JavaScript", "Programação"],
+      "description": "Uma introdução moderna à programação JavaScript, cobrindo conceitos básicos e avançados da linguagem."
+    }
+  ],
+  "wishlist": [
+    {
+      "id": 9,
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "cover": "/placeholder.svg?height=400&width=300",
+      "status": "wishlist",
+      "genre": ["Sistemas Distribuídos", "Banco de Dados", "Arquitetura"],
+      "description": "Um livro que explora os princípios, desafios e soluções para sistemas de dados modernos e distribuídos."
+    }
+  ]
+}
+
