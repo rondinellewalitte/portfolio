@@ -1,0 +1,203 @@
+<!doctype html>
+<!--
+  ANTES DE PUBLICAR, troque os dois campos marcados com [ ]:
+    - o nome/razão social do responsável
+    - o e-mail de contato (hoje está o pessoal; se abrir CNPJ, use o comercial)
+  O resto do texto foi conferido contra o código-fonte da versão 1.0.0.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade — Busca Rápida TUSS</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: "Segoe UI", system-ui, Arial, sans-serif;
+      line-height: 1.65; color: #1f2937; background: #fff;
+      max-width: 760px; margin: 0 auto; padding: 32px 20px 80px;
+    }
+    h1 { font-size: 26px; margin: 0 0 4px; }
+    h2 { font-size: 18px; margin: 34px 0 8px; padding-top: 14px; border-top: 1px solid #e5e7eb; }
+    .data { color: #6b7280; font-size: 14px; margin: 0 0 8px; }
+    .resumo {
+      background: #e8f7f0; border: 1px solid #b8e6d2; border-radius: 8px;
+      padding: 14px 16px; margin: 22px 0;
+    }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+    th, td { border: 1px solid #e5e7eb; padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #f9fafb; font-weight: 600; }
+    code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 90%; }
+    ul { padding-left: 22px; }
+    li { margin: 5px 0; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f172a; color: #e2e8f0; }
+      h2 { border-top-color: #1e293b; }
+      .data, footer { color: #94a3b8; }
+      .resumo { background: #0b2f22; border-color: #14503a; }
+      th, td { border-color: #1e293b; }
+      th { background: #111c33; }
+      code { background: #1e293b; }
+      footer { border-top-color: #1e293b; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Política de Privacidade</h1>
+<p class="data">Extensão <strong>Busca Rápida TUSS</strong> · Última atualização: 13 de agosto de 2026</p>
+
+<div class="resumo">
+  <strong>Resumo:</strong> a extensão não coleta, não transmite e não vende nenhum dado.
+  Ela funciona inteiramente offline: a tabela de procedimentos vem dentro do próprio
+  arquivo instalado, e a extensão não faz nenhuma conexão com a internet — nem com o
+  desenvolvedor, nem com terceiros.
+</div>
+
+<h2>1. Quem é o responsável</h2>
+<p>
+  Esta extensão é desenvolvida e mantida por <strong>[SEU NOME OU RAZÃO SOCIAL]</strong>,
+  produto independente, sem vínculo, patrocínio, afiliação ou endosso de qualquer operadora
+  de plano de saúde, da ANS ou dos fornecedores do portal onde ela funciona.
+</p>
+
+<h2>2. O que a extensão faz</h2>
+<p>
+  Ela permite localizar o código TUSS de um procedimento a partir do nome do exame e
+  inserir esse código no campo correspondente do portal. A tabela TUSS (Terminologia
+  Unificada da Saúde Suplementar), publicada pela ANS, está embutida no arquivo da
+  extensão — por isso a busca funciona sem internet.
+</p>
+
+<h2>3. O que a extensão <em>não</em> faz</h2>
+<p>Isto importa porque a extensão é usada dentro de um sistema de saúde:</p>
+<ul>
+  <li>Não lê, não copia e não armazena dados de pacientes, guias, prontuários ou beneficiários.</li>
+  <li>Não lê, não copia e não armazena login, senha, sessão ou qualquer credencial.</li>
+  <li>Não registra o que você digita fora da própria janela de busca da extensão.</li>
+  <li>Não envia nada para o desenvolvedor nem para qualquer servidor.</li>
+  <li>Não usa analytics, telemetria, rastreadores, cookies, anúncios ou perfilamento.</li>
+  <li>Não baixa nem executa código remoto: todo o código está no pacote instalado.</li>
+</ul>
+<p>
+  Na página do portal, a extensão faz apenas duas coisas: aguarda o atalho de teclado e
+  escreve o código escolhido no campo de procedimento.
+</p>
+
+<h2>4. O que fica guardado, e onde</h2>
+<p>Tudo é armazenado pelo próprio navegador, no seu computador:</p>
+
+<table>
+  <thead>
+    <tr><th>Informação</th><th>Para quê</th><th>Onde fica</th><th>Por quanto tempo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Suas preferências: atalho alternativo de teclado, se o histórico está ligado e os
+          seletores dos campos do portal</td>
+      <td>Manter a extensão configurada do seu jeito</td>
+      <td><code>chrome.storage.sync</code> — veja a seção 5</td>
+      <td>Até você alterar ou desinstalar a extensão</td>
+    </tr>
+    <tr>
+      <td>Histórico dos últimos <strong>30 códigos TUSS</strong> que você usou (apenas os
+          códigos — nada de paciente, guia ou data)</td>
+      <td>Mostrar primeiro os exames que você mais lança</td>
+      <td><code>chrome.storage.local</code> — só neste computador</td>
+      <td>Até você limpar nas opções ou desinstalar</td>
+    </tr>
+    <tr>
+      <td>Identificador numérico do quadro (frame) da página em que você mexeu por último</td>
+      <td>Escrever o código no campo certo quando a tela tem vários quadros</td>
+      <td><code>chrome.storage.session</code>, na memória</td>
+      <td>Apagado ao fechar o navegador</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. Sobre a sincronização do Chrome</h2>
+<p>
+  Suas <strong>preferências</strong> (item 1 da tabela) usam a área de sincronização do
+  navegador. Se você tiver a sincronização do Chrome ativada na sua conta Google, o próprio
+  navegador replica essas preferências nos seus outros dispositivos, passando pelos
+  servidores do Google. Isso é um mecanismo do Chrome, não da extensão: mesmo nesse caso o
+  desenvolvedor não recebe nem consegue acessar esses dados. Se a sincronização estiver
+  desligada, as preferências não saem deste computador.
+</p>
+<p>
+  O <strong>histórico de códigos</strong> nunca é sincronizado: ele fica exclusivamente
+  neste aparelho.
+</p>
+
+<h2>6. Permissões solicitadas e por quê</h2>
+<table>
+  <thead><tr><th>Permissão</th><th>Motivo</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><code>storage</code></td>
+      <td>Guardar as preferências e o histórico descritos na seção 4. Nada além disso.</td>
+    </tr>
+    <tr>
+      <td><code>scripting</code></td>
+      <td>A tela do portal é dividida em vários quadros. Serve para identificar em qual
+          deles está o campo de código, de modo que o valor seja escrito no lugar certo.</td>
+    </tr>
+    <tr>
+      <td>Acesso a <code>*.topsaude.com.br</code></td>
+      <td>É o endereço do portal onde o preenchimento acontece. A extensão não tem acesso a
+          nenhum outro site — em qualquer outra página ela fica inativa.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>7. Compartilhamento com terceiros</h2>
+<p>
+  Nenhum. Não há venda, aluguel, cessão ou transferência de dados, porque não há coleta de
+  dados. Também não há qualquer serviço de terceiros embutido na extensão.
+</p>
+
+<h2>8. Uso limitado</h2>
+<p>
+  O uso das informações pela extensão está de acordo com a
+  <em>Política de Uso Limitado de Dados do Usuário</em> da Chrome Web Store, incluindo os
+  requisitos de uso limitado. A extensão não transfere, não vende e não usa informações do
+  usuário para publicidade, perfilamento, avaliação de crédito ou empréstimo.
+</p>
+
+<h2>9. Dados pessoais e LGPD</h2>
+<p>
+  A extensão não trata dados pessoais nem dados pessoais sensíveis de terceiros na acepção
+  da Lei nº 13.709/2018 (LGPD). Os códigos TUSS guardados no histórico identificam
+  procedimentos, não pessoas, e não são associados a paciente, guia ou atendimento algum.
+</p>
+
+<h2>10. Como apagar tudo</h2>
+<ul>
+  <li><strong>Só o histórico:</strong> opções da extensão → “Exames recentes” → “Limpar histórico”.</li>
+  <li><strong>Tudo:</strong> desinstalar a extensão remove todos os dados locais dela.</li>
+  <li><strong>Cópias sincronizadas:</strong> desinstalar em um dispositivo com sincronização
+      ativa remove as preferências dos demais dispositivos também.</li>
+</ul>
+<p>Não é preciso pedir nada ao desenvolvedor: não existe nenhum dado seu do lado dele.</p>
+
+<h2>11. Alterações nesta política</h2>
+<p>
+  Se alguma versão futura passar a tratar dados de forma diferente, esta página será
+  atualizada com nova data antes de a versão ser publicada.
+</p>
+
+<h2>12. Contato</h2>
+<p>
+  Dúvidas sobre privacidade ou sobre a extensão:
+  <a href="mailto:[SEU E-MAIL]">[SEU E-MAIL]</a>
+</p>
+
+<footer>
+  Busca Rápida TUSS — produto independente. TUSS é a Terminologia Unificada da Saúde
+  Suplementar, tabela pública da Agência Nacional de Saúde Suplementar (ANS). Todas as
+  marcas citadas pertencem aos seus respectivos donos.
+</footer>
+
+</body>
+</html>
